@@ -2,39 +2,14 @@
 # Assignment 4: Mesh Parameterization
 
 This repository contains the viewer/painting code and data files you'll need for
-assignment 4.
+assignment 4. General guideline will be the same as before. Link to [Handouts](https://cs.nyu.edu/~panozzo/gp18/Handout4.pdf) and [Slides](https://cs.nyu.edu/~panozzo/gp18/Assignment4.pdf) **Due on Apr 11, 2018 at 23:59EST.**
 
 
-## Getting Started
-To begin, follow the link from Assitant to create the repository in this organization.
 
-Next, please refer to the [General Rules and Instructions](https://github.com/danielepanozzo/gp/raw/master/guidelines.pdf)
-handout for instructions on installing LIBIGL and its dependencies.
+## Notice: Please Update to the newest version of libigl
+There had been some change in libigl which makes previous assignments not compatible. However, starting from this one, you can use the latest master version of libigl, and of course, you don't need to change the lines in `.travis.yml`
 
-## Building and Completing the Assignment
-Once LIBIGL is set up (and pointed to by environment variable $LIBIGL_ROOT) you
-should be able to build the viewer code:
-```
-mkdir build && cd build && cmake ..
-make
-```
-Please report any problems you run into on this repository's Issues tab on
-GitHub.
+There are two major changes:
+* igl::viewer::Viewer -> igl::opengl::glfw::Viewer
+* `nanogui` is replaced by `imgui`. Please see [here](https://github.com/libigl/libigl/blob/master/tutorial/tutorial.md#viewermenu) for more detail. You don't need menu in this assignment.
 
-When the build completes successfully, begin implementing the missing blocks in
-src/main.cpp as described by the assignment PDF.
-
-## Submitting
-When you finish the assignment, you will submit it by pushing it to a the
-repository on our organization.
-
-1. Follow the link sent out by Assistant
-2. Push your code to the repository (which will be created automatically):
-```
-git push https://github.com/NYUGeometricModeling/Geometric_Modeling_Assignment4_USER
-```
-
-## Travis-CI
-Every submission must build on Linux before it can be graded/considered
-complete. To check this, you will use Travis-CI, a tool for automatically
-rebuilding your code each time you push it to GitHub.
