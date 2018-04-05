@@ -34,9 +34,22 @@ int selected;
 // Degree of the N-RoSy field
 int N;
 
+
 // Local basis
 Eigen::MatrixXd B1, B2, B3;
 
+// Texture image (grayscale)
+Eigen::Matrix<unsigned char, Eigen::Dynamic, Eigen::Dynamic> texture_I;
+void line_texture() 
+{
+  int size = 128;              // Texture size
+  int w    = 7;                // Line width
+  int pos  = size / 2 - w / 2; // Center the line
+  texture_I.setConstant(size, size, 255);
+  texture_I.block(0, pos, size, w).setZero();
+  texture_I.block(pos, 0, w, size).setZero();
+
+}
 // Converts a representative vector per face in the full set of vectors that describe
 // an N-RoSy field
 void representative_to_nrosy(
@@ -83,6 +96,7 @@ void plot_mesh_nrosy(
   // Clear the mesh
   viewer.data().clear();
   viewer.data().set_mesh(V,F);
+  viewer.data().set_texture(texture_I, texture_I, texture_I);
 
   // Expand the representative vectors in the full vector set and plot them as lines
   double avg = igl::avg_edge_length(V, F);
@@ -236,6 +250,7 @@ int main(int argc, char *argv[])
 
   // Plot the mesh
   viewer.data().set_mesh(V, F);
+  viewer.data().set_texture(texture_I, texture_I, texture_I);
 
   // Register the callbacks
   viewer.callback_key_down = &key_down;
