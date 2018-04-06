@@ -228,6 +228,7 @@ int main(int argc, char *argv[])
 
   // Load a mesh in OBJ format
   igl::readOFF("../bumpy.off", V, F);
+  line_texture();
   // Triangle-triangle adjacency
   igl::triangle_triangle_adjacency(F,TT,TTi);
 
@@ -255,7 +256,7 @@ int main(int argc, char *argv[])
   // Register the callbacks
   viewer.callback_key_down = &key_down;
   viewer.callback_mouse_down = &mouse_down;
-
+  
   // Disable wireframe
   viewer.data().show_lines = false;
 
