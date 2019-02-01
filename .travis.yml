@@ -5,11 +5,10 @@ matrix:
     - os: linux
       compiler: gcc-4.8.1
       script:
-        - git clone --recursive --depth 1 https://github.com/libigl/libigl.git ../libigl
-        - cd ../libigl && git submodule update --recursive --init && cd $TRAVIS_BUILD_DIR
+        - rm -rf build
         - mkdir build
         - cd build
-        - cmake -DCMAKE_CXX_COMPILER=g++-4.8 -DCMAKE_C_COMPILER=gcc-4.8 -DTRAVISCI_BUILD=ON ../
+        - cmake -DCMAKE_CXX_COMPILER=g++-4.8 -DCMAKE_C_COMPILER=gcc-4.8 ../
         - make -j2
       addons:
         apt:
