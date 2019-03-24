@@ -175,7 +175,7 @@ bool key_down(igl::opengl::glfw::Viewer& viewer, unsigned char key, int modifier
     b(selected) = b(b.rows()-1);
     b.conservativeResize(b.size()-1);
     bc.row(selected) = bc.row(bc.rows()-1);
-    bc.conservativeResize(b.size()-1,bc.cols());
+    bc.conservativeResize(b.size(),bc.cols());
     MatrixXd R = tutorial_nrosy(V,F,TT,b,bc,N);
     plot_mesh_nrosy(viewer,V,F,N,R,b);
   }
