@@ -2,4 +2,4 @@
 # Assignment 4: Mesh Parameterization
 
 This repository contains the viewer/painting code and data files you'll need for
-assignment 4. General guideline will be the same as before. Link to [Handouts](https://cs.nyu.edu/~panozzo/gp18/Handout4.pdf) and [Slides](https://cs.nyu.edu/~panozzo/gp18/Assignment4.pdf) **Due on Apr 11, 2018 at 23:59EST.**
+assignment 4. General guideline will be the same as before. Link to [Handouts](https://cs.nyu.edu/~panozzo/gp18/Handout4.pdf) and [Slides](https://cs.nyu.edu/~panozzo/gp18/Assignment4.pdf)
